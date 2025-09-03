@@ -94,10 +94,22 @@ app.get('/appointments', async (req, res) => {
 });
 
 
+// Helper to escape regex special characters
+function escapeRegex(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 app.post('/doctorSignUp/doctor-login', async (req, res) => {
     try {
-        const { name, password } = req.body;
-        const user = await Doctor.findOne({ name });
+        const rawName = typeof req.body.name === 'string' ? req.body.name : '';
+        const rawPassword = typeof req.body.password === 'string' ? req.body.password : '';
+
+        const name = rawName.trim();
+        const password = rawPassword.trim();
+
+        // Case-insensitive exact match on name
+        const nameRegex = new RegExp(`^${escapeRegex(name)}$`, 'i');
+        const user = await Doctor.findOne({ name: nameRegex });
 
         if (!user || user.password !== password) {
             return res.status(401).json({ message: 'Invalid credentials.' });
