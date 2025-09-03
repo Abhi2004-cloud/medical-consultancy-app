@@ -268,3 +268,59 @@ footer {
 #doctor-loginSubmit:hover {
     background-color: #262f38;
 }
+
+/* Admin Appointments Table */
+#appointmentsSection {
+    padding: 24px;
+}
+
+#appointmentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#appointmentsTable thead {
+    background: #35424a;
+    color: #ffffff;
+}
+
+#appointmentsTable th,
+#appointmentsTable td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+#appointmentsTable tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+#appointmentsTable tbody tr:nth-child(odd) {
+    background: #fafafa;
+}
+
+#appointmentsTable tbody tr:hover {
+    background: #f0f4f8;
+}
+
+#appointmentsTable th {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+#appointmentsTable td {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    #appointmentsSection {
+        overflow-x: auto;
+    }
+
+    #appointmentsTable {
+        min-width: 700px;
+    }
+}
