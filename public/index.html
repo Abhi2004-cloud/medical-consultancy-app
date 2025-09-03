@@ -1,0 +1,91 @@
+<!-- This is index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Medical Consultancy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Career Hospital Gorakhpur, U.P</h1>
+        <nav>
+            <ul>
+                <li><a href="#description">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="doctor-login.html">Doctor Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="description">
+        <h2>Welcome to Our Online Medical Consultancy</h2>
+        <p>We provide professional medical consultation services online. Book your appointment with our experienced
+            doctors today.</p>
+    </section>
+
+    <section id="doctors">
+        <h2>Available Doctors</h2><br><br>
+        <div id="subdoctors">
+            <div class="doctor">
+                <h3>Dr. Mukund Pandit</h3>
+                <p>Specialization: Cardiology</p>
+                <p>Experience: 10 years</p>
+                <button onclick="window.location.href='consult.html?doctor=Dr. John Smith'">Consult</button>
+            </div>
+            <div class="doctor">
+                <h3>Dr. Ajay Bhosale</h3>
+                <p>Specialization: Neurology</p>
+                <p>Experience: 8 years</p>
+                <button onclick="window.location.href='consult.html?doctor=Dr. Emily Johnson'">Consult</button>
+            </div>
+            <div class="doctor">
+                <h3>Dr. Manish Kulkarni</h3>
+                <p>Specialization: Gynecologist</p>
+                <p>Experience: 15 years</p>
+                <button onclick="window.location.href='consult.html?doctor=Dr. Emily Johnson'">Consult</button>
+            </div>
+            <div class="doctor">
+                <h3>Dr. Prateek Mohan</h3>
+                <p>Specialization: Pyschiatrist</p>
+                <p>Experience: 18 years</p>
+                <button onclick="window.location.href='consult.html?doctor=Dr. Emily Johnson'">Consult</button>
+            </div>
+        </div>
+        <!-- Add more doctors as needed -->
+    </section>
+
+    <section id="extraInfo">
+        <div class="subInfo">
+            <h3>Benefits of Online Doctor Consultation</h1>
+            <ul>
+                <li>24X 7 Consultation : Consult a doctor via audio/video anytime.</li>
+                <li>Convenience : Access MD-level doctors across 22+ specialties.</li>
+                <li>Time-saving : Schedule a doctor's appointment in under 10 minutes.</li>
+                <li>Cost-effective : Book an appointment for just ₹199</li>
+                <li>Flexibility : Connect with a doctor at your convenience.</li>
+                <li>Remote monitoring : Remote monitoring of any chronic condition.</li>
+            </ul>
+        </div>
+
+        <div class="subInfo">
+            <h3>Specializations of our Doctors</h3>
+            <ul>
+                <li>Cardiology : Diangnosing and Treatment of diseases of Heart, Blood Vessels and Cirulatory System.</li>
+                <li>Neurology : Study and treatment of nervous system disorders</li>
+                <li>Gynecology : Deals with Women's Health Issues.</li>
+                <li>Pyschiatry : Treats injuries, illnesses, and medical conditions related to the brain, spinal cord, nerves, bones, joints, and muscles.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Medical Consultancy. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

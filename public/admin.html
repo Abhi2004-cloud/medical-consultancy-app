@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Appointments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>All Appointments</h1>
+    </header>
+
+    <section id="appointmentsSection">
+        <table id="appointmentsTable">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Appointments will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Medical Consultancy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchAppointments() {
+            try {
+                const response = await fetch('http://localhost:3000/appointments');
+                if (response.ok) {
+                    const appointments = await response.json();
+                    const tableBody = document.querySelector('#appointmentsTable tbody');
+                    appointments.forEach(appointment => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${appointment.userName}</td>
+                            <td>${appointment.userEmail}</td>
+                            <td>${appointment.doctorName}</td>
+                            <td>${appointment.date}</td>
+                            <td>${appointment.time}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    alert('Error fetching appointments.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Fetch appointments when the page loads
+        document.addEventListener('DOMContentLoaded', fetchAppointments);
+    </script>
+</body>
+</html>
+

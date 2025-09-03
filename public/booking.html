@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Appointment</h1>
+    </header>
+
+    <section id="appointmentSection">
+        <form id="appointmentForm">
+            <input type="hidden" id="userId" name="userId"> <!-- This will be set dynamically -->
+
+            <div class="inputDivSU">
+                <label for="doctorName">Doctor:</label>
+                <select id="doctorName" name="doctorName" required>
+                    <option value="Dr. Mukund Pandit">Dr. Mukund Pandit</option>
+                    <option value="Dr. Ajay Bhosale">Dr. Ajay Bhosale</option>
+                    <option value="Dr. Manish Kulkarni">Dr. Manish Kulkarni</option>
+                    <option value="Dr. Prateek Mohan">Dr. Prateek Mohan</option>
+                </select><br>
+            </div>
+
+            <div class="inputDivSU">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required><br>
+            </div>
+            <div class="inputDivSU">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required><br>
+            </div>
+            <div class="inputDivSU">
+                <button type="submit" id="bookAppointmentSubmit">Book Appointment</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Medical Consultancy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userId = localStorage.getItem('userId');
+            if (!userId) {
+                alert('User not logged in');
+                window.location.href = 'login.html'; // Redirect to login if no user ID found
+            } else {
+                document.getElementById('userId').value = userId;
+            }
+        });
+
+        document.getElementById('appointmentForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('http://localhost:3000/appointments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Appointment booked successfully!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Error booking appointment.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Doctor Login</h1>
+    </header>
+
+    <section id="loginSection">
+        <form id="loginForm">
+            <div class="inputDivL">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+            </div>
+            <div class="inputDivL">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+            </div>
+            <button type="submit" id="loginSubmit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Medical Consultancy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('http://localhost:3000/doctorSignUp/doctor-login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    localStorage.setItem('userId', result.userId);
+                    window.location.href = 'admin.html';  // Redirect to admin page
+                } else {
+                    alert('Invalid credentials.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

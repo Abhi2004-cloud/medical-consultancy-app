@@ -1,0 +1,270 @@
+/* This is stylles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#description {
+    margin-bottom: 40px;
+}
+
+#doctors {
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#subdoctors{
+    display: flex;
+    justify-content: space-around;
+    row-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.doctor {
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#doctors h2{
+    text-align: center;
+}
+
+.doctor h3 {
+    margin-top: 0;
+}
+
+.doctor button {
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.doctor button:hover {
+    background-color: #262f38;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #35424a;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.subInfo{
+    margin: 20px;
+    padding: 10px;
+}
+
+.subInfo ul li{
+    margin:38px ;
+}
+
+#signUpSection{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    top: 50px;
+    left: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+#signUpSection form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#signUpSection form input{
+    width: 300px;
+    height: 20px;
+}
+
+.inputDivSU {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputDivSU label {
+    margin-bottom: 5px;
+}
+
+.inputDivSU input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#signUpSubmit{
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    width: 200px;
+    height: 37px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#signUpSubmit:hover {
+    background-color: #262f38;
+}
+
+#loginSection{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    top: 50px;
+    left: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+#loginSection form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#loginSection form input{
+    width: 300px;
+    height: 20px;
+}
+
+.inputDivL {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputDivL label {
+    margin-bottom: 5px;
+}
+
+.inputDivL input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginSubmit{
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    width: 200px;
+    height: 37px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#loginSubmit:hover {
+    background-color: #262f38;
+}
+
+#doctor-loginSection{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    top: 50px;
+    left: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+#doctor-loginSection form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#doctor-loginSection form input{
+    width: 300px;
+    height: 20px;
+}
+
+.inputDivDL {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputDivDL label {
+    margin-bottom: 5px;
+}
+
+.inputDivDL input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#doctor-loginSubmit{
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    width: 200px;
+    height: 37px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#doctor-loginSubmit:hover {
+    background-color: #262f38;
+}
