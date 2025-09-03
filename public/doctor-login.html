@@ -29,6 +29,7 @@
         <p>&copy; 2024 Online Medical Consultancy. All rights reserved.</p>
     </footer>
 
+    <script src="config.js"></script>
     <script>
         document.getElementById('loginForm').addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -36,7 +37,7 @@
             const data = Object.fromEntries(formData.entries());
 
             try {
-                const response = await fetch('http://localhost:3000/doctorSignUp/doctor-login', {
+                const response = await fetch(`${API_BASE_URL}/doctorSignUp/doctor-login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
